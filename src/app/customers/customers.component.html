@@ -2,8 +2,10 @@
 you can do also <h1 [innerHtml]="title"></h1>
 or
 Interpolation syntaxe
+ 
+Data Binding <h1 [hidden]="!isVisible">{{ title }}</h1>
+Event Binding <button (click)="changeVisible()">Show/Hide</button>
 -->
-<h1 [hidden]="!isVisible">{{ title }}</h1>
-<button (click)="changeVisible()">Show/Hide</button>
+<h1>{{ title }}</h1>
 <br />
 <app-customers-list></app-customers-list>
