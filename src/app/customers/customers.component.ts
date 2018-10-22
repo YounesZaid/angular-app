@@ -9,6 +9,11 @@ import { ICustomer } from "../shared/interfaces";
 export class CustomersComponent implements OnInit {
   title: String;
   people: ICustomer[];
+  isVisible = true;
+
+  changeVisible = () => {
+    this.isVisible = !this.isVisible;
+  };
 
   constructor() {}
 

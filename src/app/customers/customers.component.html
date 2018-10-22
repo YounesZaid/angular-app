@@ -1,2 +1,9 @@
-<h1 [innerHtml]="title"></h1>
+<!--
+you can do also <h1 [innerHtml]="title"></h1>
+or
+Interpolation syntaxe
+-->
+<h1 [hidden]="!isVisible">{{ title }}</h1>
+<button (click)="changeVisible()">Show/Hide</button>
+<br />
 <app-customers-list></app-customers-list>
