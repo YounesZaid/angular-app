@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 import { IEmploye } from "src/app/shared/interfaces";
 
@@ -7,18 +7,35 @@ import { IEmploye } from "src/app/shared/interfaces";
   templateUrl: "./employes-list.component.html"
 })
 export class EmployesListComponent implements OnInit {
-  filteredCustomers: IEmploye[] = [];
-  customersOrderTotal: number;
+  private _employes: IEmploye[] = [];
+  filteredEmployes: IEmploye[] = [];
+  employesOrderTotal: number;
   currencyCode: string = "USD";
+
+  // @Input()
+  // employes;
+  @Input()
+  get employes(): IEmploye[] {
+    return this._employes;
+  }
+
+  set employes(value: IEmploye[]) {
+    if (value) {
+      this.filteredEmployes = this._employes = value;
+      this.calculateOrders();
+    }
+  }
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    //this._employes = this.employes;
+  }
 
   calculateOrders = () => {
-    this.customersOrderTotal = 0;
-    this.filteredCustomers.forEach((cust: IEmploye) => {
-      this.customersOrderTotal += cust.orderTotal;
+    this.employesOrderTotal = 0;
+    this.filteredEmployes.forEach((cust: IEmploye) => {
+      this.employesOrderTotal += cust.orderTotal;
     });
   };
 

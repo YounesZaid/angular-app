@@ -10,24 +10,24 @@
     </tr>
   </thead>
   <!-- Structural directive *ngFor blabla -->
-  <tr *ngFor="let cust of filteredCustomers">
+  <tr *ngFor="let emp of filteredEmployes">
     <td>
       <a>
-        {{ cust.name }}
+        {{ emp.name }}
       </a>
     </td>
-    <td> {{ cust.city }} </td>
-    <td> {{ cust.orderTotal }} </td>
+    <td> {{ emp.city }} </td>
+    <td> {{ emp.orderTotal }} </td>
   </tr>
-  <tr *ngIf="filteredCustomers && filteredCustomers.length">
+  <tr *ngIf="filteredEmployes && filteredEmployes.length">
     <td colspan="2">&nbsp;</td>
     <td>
-      {{ customersOrderTotal }}
+      {{ employesOrderTotal }}
     </td>
   </tr>
-  <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
+  <tr *ngIf="!filteredEmployes || !filteredEmployes.length">
     <td colspan="4">No employes found</td>
   </tr>
 </table>
-Number of Employes: {{ filteredCustomers.length }}
+Number of Employes: {{ filteredEmployes.length }}
 <br />
