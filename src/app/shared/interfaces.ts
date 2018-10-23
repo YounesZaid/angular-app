@@ -1,9 +1,9 @@
-export interface ICustomer {
+export interface IEmploye {
   id: number;
   name: String;
   city: String;
   orderTotal?: number;
-  customerSince: any;
+  employeSince: any;
 }
 
 export interface IOrder {
