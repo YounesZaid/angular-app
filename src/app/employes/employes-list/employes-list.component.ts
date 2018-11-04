@@ -12,18 +12,20 @@ export class EmployesListComponent implements OnInit {
   employesOrderTotal: number;
   currencyCode: string = "USD";
 
+  message = "salam";
+
   // @Input()
   // employes;
   @Input()
-  get employes(): IEmploye[] {
-    return this._employes;
-  }
-
   set employes(value: IEmploye[]) {
     if (value) {
       this.filteredEmployes = this._employes = value;
       this.calculateOrders();
     }
+  }
+
+  get employes(): IEmploye[] {
+    return this._employes;
   }
 
   constructor() {}
