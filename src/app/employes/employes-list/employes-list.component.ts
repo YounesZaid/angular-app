@@ -41,6 +41,21 @@ export class EmployesListComponent implements OnInit {
     });
   };
 
+  filter(data: string) {
+    if (data) {
+      this.filteredEmployes = this.employes.filter((emp: IEmploye) => {
+        return (
+          emp.name.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+          emp.city.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+          emp.orderTotal.toString().indexOf(data) > -1
+        );
+      });
+    } else {
+      this.filteredEmployes = this.employes;
+    }
+    this.calculateOrders();
+  }
+
   sort = (prop: string) => {
     // implementation of sorting
     // A sorter service will handle the sorting
