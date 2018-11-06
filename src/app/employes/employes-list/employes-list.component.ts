@@ -12,7 +12,7 @@ export class EmployesListComponent implements OnInit {
   employesOrderTotal: number;
   currencyCode: string = "USD";
 
-  message = "salam";
+  message = "Employés";
 
   // @Input()
   // employes;

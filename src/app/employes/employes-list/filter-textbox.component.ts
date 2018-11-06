@@ -3,20 +3,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "filter-textbox",
   template: `
-    Filter : <input type="text" [(ngModel)]="filter"/>
+    Filter : <input type="text" [(ngModel)]="wordFilter"/>
   `
 })
 export class FilterTextboxComponent implements OnInit {
   private _filter: string;
 
   @Input()
-  get filter() {
+  get wordFilter() {
     return this._filter;
   }
 
-  set filter(val: string) {
+  set wordFilter(val: string) {
     this._filter = val;
-    this.changed.emit(this.filter);
+    this.changed.emit(this.wordFilter);
   }
 
   @Output()
