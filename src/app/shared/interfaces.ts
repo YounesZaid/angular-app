@@ -7,7 +7,7 @@ export interface IEmploye {
 }
 
 export interface IOrder {
-  customerId: number;
+  employeeId: number;
   orderItems: IOrderItem[];
 }
 
