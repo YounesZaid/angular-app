@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 import { IEmploye } from "src/app/shared/interfaces";
+import { SorterService } from "src/app/core/sorter.service";
 
 @Component({
   selector: "app-employes-list",
@@ -28,7 +29,7 @@ export class EmployesListComponent implements OnInit {
     return this._employes;
   }
 
-  constructor() {}
+  constructor(private sorterService: SorterService) {}
 
   ngOnInit() {
     //this._employes = this.employes;
@@ -59,5 +60,6 @@ export class EmployesListComponent implements OnInit {
   sort = (prop: string) => {
     // implementation of sorting
     // A sorter service will handle the sorting
+    this.sorterService.sort(this.filteredEmployes, prop);
   };
 }
