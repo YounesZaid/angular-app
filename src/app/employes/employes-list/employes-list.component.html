@@ -1,5 +1,4 @@
-<filter-textbox (changed)="filter($event)"></filter-textbox>
-<br />
+<filter-textbox (changed)="filter($event)"></filter-textbox> <br />
 <br />
 <table class="table table-hover">
   <thead>
@@ -11,25 +10,19 @@
   </thead>
   <!-- Structural directive *ngFor blabla -->
   <tr *ngFor="let emp of filteredEmployes">
-    <td>
-      <a>
-        {{ emp.name | capitalize }}
-      </a>
-    </td>
-    <td> {{ emp.city }} </td>
-    <td> {{ emp.orderTotal | currency:currencyCode:'symbol' }} </td>
+    <td [routerLink]="['/orders', emp.id]">{{ emp.name | capitalize }}</td>
+    <td>{{ emp.city }}</td>
+    <td>{{ emp.orderTotal | currency: currencyCode:"symbol" }}</td>
   </tr>
   <tr *ngIf="filteredEmployes && filteredEmployes.length">
     <td colspan="2">&nbsp;</td>
-    <td>
-      {{ employesOrderTotal | currency:currencyCode:'code' }}
-    </td>
+    <td>{{ employesOrderTotal | currency: currencyCode:"code" }}</td>
   </tr>
   <tr *ngIf="!filteredEmployes || !filteredEmployes.length">
     <td colspan="4">No employes found</td>
   </tr>
 </table>
+
 Number of Employes: {{ filteredEmployes.length }}
 
-{{ message }}
-<br />
+{{ message }} <br />

@@ -4,11 +4,10 @@
   <table class="table table-hover orders-table" *ngFor="let order of orders">
     <tr *ngFor="let orderItem of order.orderItems">
       <td>{{ orderItem.productName }}</td>
-      <td>{{ orderItem.itemCost | currency:'USD':'symbol' }}</td>
+      <td>{{ orderItem.itemCost | currency: "USD":"symbol" }}</td>
     </tr>
   </table>
 </div>
-<div *ngIf="!employe">
-  No employe found
-</div>
+<div *ngIf="!employe">No employe found</div>
 <br />
+<a routerLink="/employes">View All Employees</a>
